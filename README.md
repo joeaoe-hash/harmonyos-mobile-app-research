@@ -14,7 +14,7 @@
 在终端执行：
 
 ```powershell
-codex plugin marketplace add <GitHub账号或组织>/mobile-app-research
+codex plugin marketplace add joeaoe-hash/mobile-app-research
 codex plugin add mobile-app-research@mobile-app-research
 ```
 
