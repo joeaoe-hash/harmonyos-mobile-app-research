@@ -1,0 +1,4 @@
+interface:
+  display_name: "采集应用市场评论"
+  short_description: "通过 HDC 和 Hypium 按月份采集应用市场最新评论"
+  default_prompt: "Use $collect-appgallery-reviews to collect AppGallery reviews by month with resumable UI Tree automation and validated CSV output."

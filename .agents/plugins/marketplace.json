@@ -1,0 +1,20 @@
+{
+  "name": "mobile-app-research",
+  "interface": {
+    "displayName": "Mobile App Research"
+  },
+  "plugins": [
+    {
+      "name": "mobile-app-research",
+      "source": {
+        "source": "local",
+        "path": "./plugins/mobile-app-research"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

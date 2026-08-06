@@ -1,0 +1,4 @@
+interface:
+  display_name: "安卓/鸿蒙功能清单"
+  short_description: "逐页核验安卓与鸿蒙应用功能，生成可追溯的差异矩阵和证据清单"
+  default_prompt: "使用 $inventory-mobile-app-features 核验这个应用的 Android 与鸿蒙功能，输出带证据的差异矩阵。"

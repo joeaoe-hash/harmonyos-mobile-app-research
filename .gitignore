@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+work/
+outputs/
+*.log
+*.checkpoint.json
+raw-evidence/
+private-data/
+.env
+.env.*
+!.env.example
