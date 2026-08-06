@@ -520,7 +520,7 @@ def build_parser() -> argparse.ArgumentParser:
     prepare_parser = subparsers.add_parser("prepare")
     prepare_parser.add_argument("input", type=Path)
     prepare_parser.add_argument("--out", required=True, type=Path)
-    prepare_parser.add_argument("--salt", default="mobile-app-research", help="Local pseudonymization salt; do not publish it with raw identifiers")
+    prepare_parser.add_argument("--salt", default="harmonyos-mobile-app-research", help="Local pseudonymization salt; do not publish it with raw identifiers")
     prepare_parser.add_argument("--topic-config", type=Path)
     prepare_parser.set_defaults(func=prepare_command)
     validate_parser = subparsers.add_parser("validate")

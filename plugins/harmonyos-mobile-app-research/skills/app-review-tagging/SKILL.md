@@ -18,7 +18,7 @@ description: 清洗、去重并标签化应用市场、社媒、客服工单或�
 - 输出 JSONL / CSV / 统计摘要；
 - 为后续 `app-satisfaction-analysis` 提供稳定输入。
 
-## 与 mobile-app-research 插件衔接
+## 与 HarmonyOS Mobile App Research 插件衔接
 
 开始标签化前，完整读取 [标签字段规范](references/tagging_schema.md)。需要批量构造逐条模型请求时，再读取 [标签提示模板](prompts/tagging_prompt.md)；提示模板不能替代字段规范。
 

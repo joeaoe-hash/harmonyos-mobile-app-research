@@ -1,14 +1,14 @@
 {
-  "name": "mobile-app-research",
+  "name": "harmonyos-mobile-app-research",
   "interface": {
-    "displayName": "Mobile App Research"
+    "displayName": "HarmonyOS Mobile App Research"
   },
   "plugins": [
     {
-      "name": "mobile-app-research",
+      "name": "harmonyos-mobile-app-research",
       "source": {
         "source": "local",
-        "path": "./plugins/mobile-app-research"
+        "path": "./plugins/harmonyos-mobile-app-research"
       },
       "policy": {
         "installation": "AVAILABLE",

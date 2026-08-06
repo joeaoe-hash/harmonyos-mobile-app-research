@@ -1,4 +1,0 @@
-interface:
-  display_name: "应用评论清洗与标签化"
-  short_description: "清洗应用市场评论并生成可审计标签数据、CSV 与 JSONL"
-  default_prompt: "使用 $app-review-tagging 清洗并标签化这批应用市场评论，输出可审计的 JSONL、CSV 和摘要。"

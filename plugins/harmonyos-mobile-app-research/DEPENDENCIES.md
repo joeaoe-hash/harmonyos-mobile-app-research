@@ -42,7 +42,7 @@ py -3.11 -m pip install python-docx matplotlib pandas openpyxl
 4. 使用 Hypium 脚本时安装：
 
    ```powershell
-   py -3.11 -m pip install -r plugins/mobile-app-research/requirements-harmony.txt
+   py -3.11 -m pip install -r plugins/harmonyos-mobile-app-research/requirements-harmony.txt
    ```
 
 验证：

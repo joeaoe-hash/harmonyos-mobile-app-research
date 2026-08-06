@@ -1,4 +1,0 @@
-interface:
-  display_name: "采集鸿蒙应用更新内容"
-  short_description: "采集并核验鸿蒙应用近期版本更新、尝鲜测试计划与发布时间线"
-  default_prompt: "Use $collect-appgallery-updates to collect and organize recent HarmonyOS AppGallery release notes and test plans."

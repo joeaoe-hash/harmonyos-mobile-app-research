@@ -1,0 +1,4 @@
+interface:
+  display_name: "应用满意度月报"
+  short_description: "按金标准生成带证据、图表、深层归因和路线图的满意度报告"
+  default_prompt: "使用 $app-satisfaction-report 将分析结果生成符合金标准的满意度月度报告。"

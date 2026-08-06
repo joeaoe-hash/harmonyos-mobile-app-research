@@ -1,4 +1,0 @@
-interface:
-  display_name: "应用评论满意度分析"
-  short_description: "从标签化评论生成趋势、主题、设备、地域与优先级分析"
-  default_prompt: "使用 $app-satisfaction-analysis 对这批标签化评论完成多维满意度分析、版本归因和图表。"

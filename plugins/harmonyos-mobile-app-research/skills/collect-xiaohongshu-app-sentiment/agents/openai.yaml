@@ -1,0 +1,4 @@
+interface:
+  display_name: "整理小红书应用舆情"
+  short_description: "采集小红书应用帖子与评论线程并完成上下文舆情和主题分析"
+  default_prompt: "Use $collect-xiaohongshu-app-sentiment to collect recent Xiaohongshu app discussions and produce an evidence-backed sentiment report."

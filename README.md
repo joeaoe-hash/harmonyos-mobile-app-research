@@ -1,4 +1,4 @@
-# Mobile App Research
+# HarmonyOS Mobile App Research（鸿蒙应用解决方案助手）
 
 面向 Codex 与 ChatGPT 的移动应用研究插件，包含 AppGallery 评论与版本采集、评论标签化、满意度分析与报告、小红书应用舆情分析，以及 Android/HarmonyOS 功能清单与差异矩阵。
 
@@ -14,19 +14,23 @@
 在终端执行：
 
 ```powershell
-codex plugin marketplace add joeaoe-hash/mobile-app-research
-codex plugin add mobile-app-research@mobile-app-research
+codex plugin marketplace add joeaoe-hash/harmonyos-mobile-app-research
+codex plugin add harmonyos-mobile-app-research@harmonyos-mobile-app-research
 ```
 
-也可以先执行 `codex`，然后输入 `/plugins`，切换到 `Mobile App Research` 市场并安装插件。
+也可以先执行 `codex`，然后输入 `/plugins`，切换到 `HarmonyOS Mobile App Research` 市场并安装“鸿蒙应用解决方案助手”。
 
 安装或升级后请新建任务，使新增技能和工具生效。
+
+## 从 0.1.0 迁移
+
+`0.2.0` 将插件 ID 从 `mobile-app-research` 改为 `harmonyos-mobile-app-research`。旧插件不会自动变成新插件：先按上面的新命令安装，再在 `/plugins` 中卸载或停用旧的 `mobile-app-research`。GitHub 会把旧仓库地址重定向到新地址，但后续配置应使用新名称。
 
 升级市场与插件：
 
 ```powershell
-codex plugin marketplace upgrade mobile-app-research
-codex plugin add mobile-app-research@mobile-app-research
+codex plugin marketplace upgrade harmonyos-mobile-app-research
+codex plugin add harmonyos-mobile-app-research@harmonyos-mobile-app-research
 ```
 
 ## 依赖分层
@@ -50,7 +54,7 @@ codex plugin add mobile-app-research@mobile-app-research
 2. 安装 Python 依赖：
 
    ```powershell
-   py -3.11 -m pip install -r plugins/mobile-app-research/requirements-harmony.txt
+   py -3.11 -m pip install -r plugins/harmonyos-mobile-app-research/requirements-harmony.txt
    ```
 
 3. 连接设备并确认状态：
@@ -93,7 +97,7 @@ codex plugin add mobile-app-research@mobile-app-research
 
 ```powershell
 py -3.11 -m pip install PyYAML
-py -3.11 C:\path\to\plugin-creator\scripts\validate_plugin.py plugins/mobile-app-research
+py -3.11 C:\path\to\plugin-creator\scripts\validate_plugin.py plugins/harmonyos-mobile-app-research
 ```
 
 各技能还应使用 Codex 的 `skill-creator/scripts/quick_validate.py` 分别校验。发布前再运行一次隐私扫描，并确认 Git 历史中从未提交真实数据或凭据。
