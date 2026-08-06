@@ -4,6 +4,18 @@
 
 本仓库是 Git-backed Codex 插件市场。插件只提供技能、脚本、模板和合成示例，不包含真实用户名、账号、设备地址、Cookie、令牌、原始评论数据或内部报告。
 
+## 从这里开始
+
+- [7 个 Skill 的工作原理、流程与用法](docs/SKILL_WORKFLOWS.md)
+- [按任务安装依赖](plugins/harmonyos-mobile-app-research/DEPENDENCIES.md)
+- [完整工作流程与方法论（Markdown）](examples/workflow-methodology/鸿蒙应用研究_工作流程与方法论.md)
+- [可下载工作流程与方法论（DOCX）](examples/workflow-methodology/鸿蒙应用研究_工作流程与方法论.docx)
+- [公开分享前的隐私检查](PRIVACY.md)
+
+安装后不需要记住 Skill 名称，直接描述任务即可。例如：
+
+> 为“示例应用”做 2026 年 7 月 HarmonyOS 满意度月报。采集 AppGallery 评论与版本记录，完成脱敏、标签化和多维分析，最后生成 12 页以内的分析报告；每个结论都保留证据和限制说明。
+
 ## 安装插件
 
 前置条件：
@@ -90,6 +102,8 @@ codex plugin add harmonyos-mobile-app-research@harmonyos-mobile-app-research
 - `app-satisfaction-analysis`
 - `app-satisfaction-report`
 - `inventory-mobile-app-features`
+
+每个 Skill 的输入、内部流程、输出、依赖、使用示例和验证边界见 [Skill 工作流总览](docs/SKILL_WORKFLOWS.md)。完整链路、单 Skill 使用和没有真机时的回退方式都在该文档中说明。
 
 ## 验证
 

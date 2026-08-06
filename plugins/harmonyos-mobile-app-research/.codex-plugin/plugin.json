@@ -1,7 +1,7 @@
 {
   "name": "harmonyos-mobile-app-research",
-  "version": "0.2.0",
-  "description": "Research HarmonyOS mobile apps through review and release evidence, satisfaction and social-sentiment analysis, management reports, and Android/HarmonyOS feature inventories.",
+  "version": "0.3.1",
+  "description": "Research HarmonyOS mobile apps through review and release evidence, satisfaction and social-sentiment analysis, decision-ready reports, and Android/HarmonyOS feature inventories.",
   "author": {
     "name": "HarmonyOS Mobile App Research Contributors"
   },
@@ -26,7 +26,7 @@
       "Local device automation",
       "Review and release collection",
       "Satisfaction analysis",
-      "Management report generation",
+      "Decision-ready report generation",
       "Social sentiment analysis",
       "Feature inventory",
       "Auditable CSV and document export"
