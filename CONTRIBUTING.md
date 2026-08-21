@@ -46,3 +46,7 @@ py -3.11 C:\path\to\skill-creator\scripts\quick_validate.py plugins/harmonyos-mo
 - 新增脚本应提供最小可运行示例；新增 Skill 应说明输入、流程、输出和停止条件。
 
 第一次参与可以从带有 `good first issue` 标签的问题开始，也可以在 Discussions 中先描述场景。
+
+## 贡献许可
+
+提交到 MIT 覆盖范围内的代码、Skill、提示词、规范、模板和通用文档，将按照仓库根目录的 MIT License 提供。现成报告目录不属于 MIT；向这些目录贡献材料前，请先通过 Issue 确认版权和授权范围。完整边界见 [LICENSE-SCOPE.md](LICENSE-SCOPE.md)。

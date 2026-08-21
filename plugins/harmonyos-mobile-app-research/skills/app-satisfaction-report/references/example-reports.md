@@ -1,5 +1,7 @@
 # 双基准示范使用说明
 
+> **许可提示：** `references/examples/` 中的报告成品不适用仓库根目录 MIT License，仅用于学习输出结构和质量标准；不得照搬或再分发。详见 [examples/LICENSE](examples/LICENSE) 和仓库 [LICENSE-SCOPE.md](../../../../../LICENSE-SCOPE.md)。
+
 本 Skill 用两份互补报告定义输出标准：一份回答“应该怎样做”，一份回答“高质量成品应该是什么效果”。
 
 规范示范中所说的“3 个 Skill”专指评论标签化、满意度分析和满意度报告这条子链路，不代表完整插件只有 3 个 Skill。

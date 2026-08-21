@@ -1,6 +1,6 @@
 {
   "name": "harmonyos-mobile-app-research",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Turn Codex and ChatGPT into a HarmonyOS product-research agent for AppGallery evidence, satisfaction analysis, reports, and Android/HarmonyOS feature inventories.",
   "author": {
     "name": "HarmonyOS Mobile App Research Contributors"

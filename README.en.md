@@ -4,7 +4,7 @@
 
 **Turn Codex or ChatGPT into a HarmonyOS product-research agent—from AppGallery and device evidence to structured analysis, feature verification, and decision-ready reports.**
 
-[中文说明](README.md) · [Quick install](#quick-install) · [How the 7 skills work](docs/SKILL_WORKFLOWS.md) · [Workflow methodology](examples/workflow-methodology/README.md)
+[中文说明](README.md) · [Quick install](#quick-install) · [How the 7 skills work](docs/SKILL_WORKFLOWS.md) · [Workflow methodology](examples/workflow-methodology/README.md) · [License scope](LICENSE-SCOPE.md)
 
 This is more than an ArkTS coding helper. It packages the fragmented work of mobile-app research—device checks, AppGallery reviews and releases, feedback tagging, satisfaction analysis, report generation, and Android/HarmonyOS feature comparison—into seven composable Codex skills.
 
@@ -66,9 +66,9 @@ See [SKILL_WORKFLOWS.md](docs/SKILL_WORKFLOWS.md) for each skill's inputs, inter
 
 ## Output references
 
-- [Workflow methodology](examples/workflow-methodology/README.md)
-- [Report output specification](plugins/harmonyos-mobile-app-research/skills/app-satisfaction-report/references/examples/report-method-standard.md)
-- [Complete report example](plugins/harmonyos-mobile-app-research/skills/app-satisfaction-report/references/examples/kugou-harmony-satisfaction-gold-example.md)
+- [Workflow methodology](examples/workflow-methodology/README.md) (copyright reserved; output reference only)
+- [Report output specification](plugins/harmonyos-mobile-app-research/skills/app-satisfaction-report/references/examples/report-method-standard.md) (copyright reserved; output reference only)
+- [Complete report example](plugins/harmonyos-mobile-app-research/skills/app-satisfaction-report/references/examples/kugou-harmony-satisfaction-gold-example.md) (copyright reserved; output reference only)
 - [Dependency guide](DEPENDENCIES.md)
 
 ## HarmonyOS PC, Codex, ChatGPT, and Cursor
@@ -83,4 +83,6 @@ This is a Windows-VM workflow on a HarmonyOS PC, not a claim of native HarmonyOS
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) to propose a use case, improve a workflow, or report a reproducible issue. If this project saves you time or helps you make a better-supported product decision, consider starring the repository so other HarmonyOS practitioners can find it.
 
-This repository does not yet include an open-source license. No permission to copy, modify, or redistribute is granted until the repository owner selects one.
+Skills, scripts, prompts, schemas, templates, synthetic fixtures, and general project documentation are open source under the [MIT License](LICENSE).
+
+Completed reports, methodology deliverables, companion editions, charts, and layout assets are excluded from MIT and remain copyright-protected. See [LICENSE-SCOPE.md](LICENSE-SCOPE.md) for the exact directory boundaries.

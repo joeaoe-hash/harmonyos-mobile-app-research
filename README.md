@@ -4,7 +4,7 @@
 
 **让 Codex / ChatGPT 成为你的鸿蒙产品研究 Agent：从 AppGallery 真机证据、用户评论和版本信息出发，完成结构化分析、功能验证与可交付报告。**
 
-[English](README.en.md) · [60 秒安装](#60-秒安装) · [7 个 Skill 的工作流](docs/SKILL_WORKFLOWS.md) · [完整方法论](examples/workflow-methodology/鸿蒙应用研究_工作流程与方法论.md) · [输出参考](#可以直接看到的输出参考)
+[English](README.en.md) · [60 秒安装](#60-秒安装) · [7 个 Skill 的工作流](docs/SKILL_WORKFLOWS.md) · [完整方法论](examples/workflow-methodology/鸿蒙应用研究_工作流程与方法论.md) · [输出参考](#可以直接看到的输出参考) · [许可范围](LICENSE-SCOPE.md)
 
 这不是另一个只负责生成 ArkTS 代码的助手。它把移动应用研究中分散在设备、应用市场、表格、截图和文档里的工作，组织成可以由 Agent 调用、组合和复用的 7 个 Skill。
 
@@ -77,10 +77,10 @@ codex plugin add harmonyos-mobile-app-research@harmonyos-mobile-app-research
 
 ## 可以直接看到的输出参考
 
-- [完整工作流程与方法论（Markdown）](examples/workflow-methodology/鸿蒙应用研究_工作流程与方法论.md)
-- [可下载工作流程与方法论（DOCX）](examples/workflow-methodology/鸿蒙应用研究_工作流程与方法论.docx)
-- [报告输出规范](plugins/harmonyos-mobile-app-research/skills/app-satisfaction-report/references/examples/report-method-standard.md)
-- [完整报告实例](plugins/harmonyos-mobile-app-research/skills/app-satisfaction-report/references/examples/kugou-harmony-satisfaction-gold-example.md)
+- [完整工作流程与方法论（Markdown）](examples/workflow-methodology/鸿蒙应用研究_工作流程与方法论.md)（版权保留，仅供输出参考）
+- [可下载工作流程与方法论（DOCX）](examples/workflow-methodology/鸿蒙应用研究_工作流程与方法论.docx)（版权保留，仅供输出参考）
+- [报告输出规范](plugins/harmonyos-mobile-app-research/skills/app-satisfaction-report/references/examples/report-method-standard.md)（版权保留，仅供输出参考）
+- [完整报告实例](plugins/harmonyos-mobile-app-research/skills/app-satisfaction-report/references/examples/kugou-harmony-satisfaction-gold-example.md)（版权保留，仅供输出参考）
 
 仓库中的公开样本均经过公开发布检查；使用自己的数据时，结果保存在自己的工作区。
 
@@ -127,4 +127,6 @@ py -3.11 C:\path\to\plugin-creator\scripts\validate_plugin.py plugins/harmonyos-
 
 ## 许可
 
-当前仓库尚未附加开源许可证。仓库所有者确认许可范围后会单独补充；在此之前，不自动授予复制、修改或再分发权。
+本仓库中的 Skill、脚本、提示词、规范、模板、合成样本和通用项目文档采用 [MIT License](LICENSE) 开源。
+
+已经完成的报告、方法论成品、伴读版、图表和排版资产不属于 MIT，继续保留版权。明确的目录边界和使用条件见 [许可范围说明](LICENSE-SCOPE.md)。

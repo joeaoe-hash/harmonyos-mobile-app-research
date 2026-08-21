@@ -14,7 +14,18 @@ import yaml
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-README_FILES = (REPO_ROOT / "README.md", REPO_ROOT / "README.en.md")
+MARKDOWN_FILES = (
+    REPO_ROOT / "README.md",
+    REPO_ROOT / "README.en.md",
+    REPO_ROOT / "examples" / "workflow-methodology" / "README.md",
+    REPO_ROOT
+    / "plugins"
+    / "harmonyos-mobile-app-research"
+    / "skills"
+    / "app-satisfaction-report"
+    / "references"
+    / "example-reports.md",
+)
 PLUGIN_JSON = (
     REPO_ROOT
     / "plugins"
@@ -23,14 +34,27 @@ PLUGIN_JSON = (
     / "plugin.json"
 )
 SOCIAL_PREVIEW = REPO_ROOT / "docs" / "assets" / "social-preview.png"
+ROOT_LICENSE = REPO_ROOT / "LICENSE"
+LICENSE_SCOPE = REPO_ROOT / "LICENSE-SCOPE.md"
+REPORT_LICENSES = (
+    REPO_ROOT / "examples" / "workflow-methodology" / "LICENSE",
+    REPO_ROOT
+    / "plugins"
+    / "harmonyos-mobile-app-research"
+    / "skills"
+    / "app-satisfaction-report"
+    / "references"
+    / "examples"
+    / "LICENSE",
+)
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 
 
 def validate_markdown_links(errors: list[str]) -> int:
     checked = 0
-    for source in README_FILES:
+    for source in MARKDOWN_FILES:
         if not source.is_file():
-            errors.append(f"missing README: {source.relative_to(REPO_ROOT)}")
+            errors.append(f"missing Markdown file: {source.relative_to(REPO_ROOT)}")
             continue
         for target in MARKDOWN_LINK.findall(source.read_text(encoding="utf-8")):
             if not target or target.startswith(("#", "http://", "https://", "mailto:")):
@@ -93,12 +117,46 @@ def validate_social_preview(errors: list[str]) -> tuple[int, int, int]:
     return width, height, len(data)
 
 
+def validate_license_scope(errors: list[str]) -> int:
+    if not ROOT_LICENSE.is_file():
+        errors.append("missing root LICENSE")
+    else:
+        root_text = ROOT_LICENSE.read_text(encoding="utf-8")
+        if not root_text.startswith("MIT License\n"):
+            errors.append("root LICENSE is not the canonical MIT text")
+
+    if not LICENSE_SCOPE.is_file():
+        errors.append("missing LICENSE-SCOPE.md")
+    else:
+        scope_text = LICENSE_SCOPE.read_text(encoding="utf-8")
+        for excluded_path in (
+            "examples/workflow-methodology/**",
+            "plugins/harmonyos-mobile-app-research/skills/app-satisfaction-report/references/examples/**",
+        ):
+            if excluded_path not in scope_text:
+                errors.append(f"license scope is missing exclusion: {excluded_path}")
+
+    for report_license in REPORT_LICENSES:
+        if not report_license.is_file():
+            errors.append(
+                f"missing report license: {report_license.relative_to(REPO_ROOT)}"
+            )
+            continue
+        notice = report_license.read_text(encoding="utf-8")
+        if "expressly excluded from the MIT" not in notice or "All rights reserved" not in notice:
+            errors.append(
+                f"incomplete report license: {report_license.relative_to(REPO_ROOT)}"
+            )
+    return len(REPORT_LICENSES)
+
+
 def main() -> int:
     errors: list[str] = []
     links = validate_markdown_links(errors)
     forms = validate_issue_forms(errors)
     version = validate_plugin_metadata(errors)
     width, height, preview_bytes = validate_social_preview(errors)
+    report_licenses = validate_license_scope(errors)
 
     if errors:
         print("Repository validation failed:")
@@ -108,9 +166,10 @@ def main() -> int:
 
     print("Repository validation passed")
     print(f"- plugin version: {version}")
-    print(f"- local README links checked: {links}")
+    print(f"- local Markdown links checked: {links}")
     print(f"- issue YAML files checked: {forms}")
     print(f"- social preview: {width}x{height}, {preview_bytes} bytes")
+    print(f"- report-license exclusions checked: {report_licenses}")
     return 0
 
 
