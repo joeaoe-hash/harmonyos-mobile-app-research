@@ -16,11 +16,16 @@ description: 将 app-satisfaction-analysis 的结论、图表、指标与版本�
 - 结论表达方式一致；
 - 优先级判断逻辑一致；
 - 行动启示口径一致；
-- 输出效果遵循本 Skill 内置的通用报告模板与规范。
+- 输出效果同时对齐本 Skill 内置的规范示范与成品实例。
 
-## 基准报告规范（强制）
+## 双基准报告示范（强制）
 
-写作前必须完整读取并遵循 [基准报告输出规范](references/reference-output-spec.md)。公开插件不携带真实业务报告或真实评论样本；完整月报以 [报告模板](references/report_template.md) 和 [写作风格指南](references/writing_style_guide.md) 对齐证据密度、结构与排版。
+写作前必须完整读取并遵循 [基准报告输出规范](references/reference-output-spec.md) 与 [双基准示范使用说明](references/example-reports.md)。两份示范承担不同职责：
+
+- [能力固化与流程规范示范](references/examples/report-method-standard.docx)：定义流程、输入输出、分析口径、章节结构与写作纪律；
+- [酷狗音乐鸿蒙版满意度月报实例](references/examples/kugou-harmony-satisfaction-gold-example.docx)：展示核心命题、数据密度、深层归因、图表节奏与最终成品效果。
+
+生成完整月报、双周报或 DOCX 时，必须同时参考两份示范。先读取对应 Markdown 伴读版理解内容，再打开 DOCX 校准视觉效果；详细顺序、搜索锚点和模仿边界以 [双基准示范使用说明](references/example-reports.md) 为准。
 
 按需读取以下资源：
 
@@ -28,7 +33,7 @@ description: 将 app-satisfaction-analysis 的结论、图表、指标与版本�
 - 统一措辞与管理表达时读取 [写作风格指南](references/writing_style_guide.md)；
 - 批量编排报告请求时读取 [报告提示模板](prompts/report_prompt.md)。
 
-基准报告用于约束结构、图表、表格、叙事和排版；其中的示例应用、功能、数字与结论不是事实，不得复制到新报告。若用户明确要求与基准规范冲突，以用户要求和本期已验证数据为先，并在报告方法说明中记录差异。
+双基准报告用于约束结构、图表、表格、叙事、证据密度和排版；其中的示例应用、功能、数字、用户原话与结论不是本期事实，不得复制到新报告。若用户明确要求与基准规范冲突，以用户要求和本期已验证数据为先，并在报告方法说明中记录差异。
 
 ## 输入规格
 
