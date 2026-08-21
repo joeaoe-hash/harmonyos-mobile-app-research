@@ -4,6 +4,10 @@
 
 本仓库是 Git-backed Codex 插件市场。插件只提供技能、脚本、模板和合成示例，不包含真实用户名、账号、设备地址、Cookie、令牌、原始评论数据或内部报告。
 
+## 鸿蒙电脑上的使用场景
+
+如果你正在搜索“鸿蒙电脑能否安装 Codex”“鸿蒙 PC 如何调用 ChatGPT”“鸿蒙电脑虚拟机运行 Cursor”或“HarmonyOS PC 使用 AI Agent”：可以先在鸿蒙 PC 内的 Windows 虚拟机中运行 Codex、ChatGPT、Cursor 等工具，再从虚拟机来宾系统使用本仓库的移动应用研究 Skill。实际路径是 `鸿蒙 PC → 虚拟机 → Windows → Codex / ChatGPT / Cursor`，不是鸿蒙原生安装。
+
 ## 从这里开始
 
 - [7 个 Skill 的工作原理、流程与用法](docs/SKILL_WORKFLOWS.md)
