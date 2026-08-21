@@ -1,125 +1,130 @@
 # HarmonyOS Mobile App Research（鸿蒙应用解决方案助手）
 
-面向 Codex 与 ChatGPT 的移动应用研究插件，包含 AppGallery 评论与版本采集、评论标签化、满意度分析与报告、小红书应用舆情分析，以及 Android/HarmonyOS 功能清单与差异矩阵。
+![鸿蒙应用解决方案助手：从应用证据到产品行动](docs/assets/social-preview.png)
 
-本仓库是 Git-backed Codex 插件市场。插件只提供技能、脚本、模板和合成示例，不包含真实用户名、账号、设备地址、Cookie、令牌、原始评论数据或内部报告。
+**让 Codex / ChatGPT 成为你的鸿蒙产品研究 Agent：从 AppGallery 真机证据、用户评论和版本信息出发，完成结构化分析、功能验证与可交付报告。**
 
-## 鸿蒙电脑上的使用场景
+[English](README.en.md) · [60 秒安装](#60-秒安装) · [7 个 Skill 的工作流](docs/SKILL_WORKFLOWS.md) · [完整方法论](examples/workflow-methodology/鸿蒙应用研究_工作流程与方法论.md) · [输出参考](#可以直接看到的输出参考)
 
-如果你正在搜索“鸿蒙电脑能否安装 Codex”“鸿蒙 PC 如何调用 ChatGPT”“鸿蒙电脑虚拟机运行 Cursor”或“HarmonyOS PC 使用 AI Agent”：可以先在鸿蒙 PC 内的 Windows 虚拟机中运行 Codex、ChatGPT、Cursor 等工具，再从虚拟机来宾系统使用本仓库的移动应用研究 Skill。实际路径是 `鸿蒙 PC → 虚拟机 → Windows → Codex / ChatGPT / Cursor`，不是鸿蒙原生安装。
+这不是另一个只负责生成 ArkTS 代码的助手。它把移动应用研究中分散在设备、应用市场、表格、截图和文档里的工作，组织成可以由 Agent 调用、组合和复用的 7 个 Skill。
 
-## 从这里开始
+## 以前要自己查命令，现在只需要说清楚目标
 
-- [7 个 Skill 的工作原理、流程与用法](docs/SKILL_WORKFLOWS.md)
-- [按任务安装依赖](plugins/harmonyos-mobile-app-research/DEPENDENCIES.md)
-- [完整工作流程与方法论（Markdown）](examples/workflow-methodology/鸿蒙应用研究_工作流程与方法论.md)
-- [可下载工作流程与方法论（DOCX）](examples/workflow-methodology/鸿蒙应用研究_工作流程与方法论.docx)
-- [公开分享前的隐私检查](PRIVACY.md)
+| 过去的工作方式 | 现在可以怎样开始 |
+|---|---|
+| 连接手机、查找 HDC 命令、确认设备状态，再从终端结果里寻找 UDID | 告诉 Agent：“检查当前鸿蒙测试设备并读取本次调试需要的 UDID；如果目标不唯一，先停下来告诉我。” |
+| 手动翻 AppGallery 评论、复制日期和评分、反复清洗表格 | 指定应用和月份，让 Agent 采集最新列表、检查缺口、标签化并输出可审计数据 |
+| 靠截图和记忆比较 Android/HarmonyOS 功能 | 让 Agent 沿同一条用户路径逐页检查，生成带证据状态的功能树和差异矩阵 |
+| 评论、版本、舆情和功能发现分别写在不同文档里 | 把已有 Skill 像积木一样组合，形成“证据 → 分析 → 判断 → 报告”的完整链路 |
 
-安装后不需要记住 Skill 名称，直接描述任务即可。例如：
+UDID 是已有设备连接与功能盘点能力的延伸场景，不是单独增加的第八个 Skill。Agent 会先确认 HDC 和目标设备状态；它不会在多个设备之间自行猜测。
 
-> 为“示例应用”做 2026 年 7 月 HarmonyOS 满意度月报。采集 AppGallery 评论与版本记录，完成脱敏、标签化和多维分析，最后生成 12 页以内的分析报告；每个结论都保留证据和限制说明。
+## 一套可以拆装的研究闭环
 
-## 安装插件
+![从研究问题到可执行动作的六阶段闭环](examples/workflow-methodology/assets/01_end_to_end_workflow.png)
 
-前置条件：
+你可以从任何一个阶段开始：已经有 CSV，就从标签化开始；只想核对版本变化，就单独运行版本采集；只做双端功能补齐，就直接调用功能盘点。
 
-- 已安装并登录支持插件的 Codex CLI 或 ChatGPT 桌面应用。
-- 已安装 Git，并能访问 GitHub。
+## 从一句话开始
 
-在终端执行：
+### 场景一：获取当前测试设备的 UDID
+
+> 检查当前可用的 HarmonyOS 测试设备，确认只有一个明确的 Connected 目标后，读取本次调试需要的 UDID，并同时告诉我设备状态和使用的命令；如果设备未连接或目标不唯一，不要猜测。
+
+### 场景二：从应用市场评论到满意度报告
+
+> 为“示例应用”做 2026 年 7 月 HarmonyOS 满意度分析。采集 AppGallery 最新评论与正式版本记录，检查重复和日期缺口，完成标签化、多维分析并生成报告；每个结论都保留证据索引和限制说明。
+
+### 场景三：比较 Android 与 HarmonyOS 功能
+
+> 沿“首页 → 搜索 → 结果页 → 播放页”这条用户路径，逐页核对 Android 与 HarmonyOS 的功能。区分“已验证存在”“仅发现入口”“已验证缺失”“尚未检查”和“受阻”，输出功能树、差异矩阵和重测清单。
+
+### 场景四：复盘一次版本更新
+
+> 收集指定应用最近三个 HarmonyOS 正式版本的更新说明，并比较发布前后的评论主题变化。官方版本记录与用户反馈分开保存，不把时间相关性直接写成因果结论。
+
+## 60 秒安装
+
+前置条件：已安装并登录支持插件的 Codex CLI 或 ChatGPT 桌面应用；已安装 Git 并能访问 GitHub。
 
 ```powershell
 codex plugin marketplace add joeaoe-hash/harmonyos-mobile-app-research
 codex plugin add harmonyos-mobile-app-research@harmonyos-mobile-app-research
 ```
 
-也可以先执行 `codex`，然后输入 `/plugins`，切换到 `HarmonyOS Mobile App Research` 市场并安装“鸿蒙应用解决方案助手”。
+也可以先执行 `codex`，输入 `/plugins`，切换到 `HarmonyOS Mobile App Research` 市场并安装“鸿蒙应用解决方案助手”。安装或升级后请新建任务，让新版本生效。
 
-安装或升级后请新建任务，使新增技能和工具生效。
-
-## 从 0.1.0 迁移
-
-`0.2.0` 将插件 ID 从 `mobile-app-research` 改为 `harmonyos-mobile-app-research`。旧插件不会自动变成新插件：先按上面的新命令安装，再在 `/plugins` 中卸载或停用旧的 `mobile-app-research`。GitHub 会把旧仓库地址重定向到新地址，但后续配置应使用新名称。
-
-升级市场与插件：
+升级已有安装：
 
 ```powershell
 codex plugin marketplace upgrade harmonyos-mobile-app-research
 codex plugin add harmonyos-mobile-app-research@harmonyos-mobile-app-research
 ```
 
-## 依赖分层
+## 7 个 Skill 分别负责什么
 
-不是每个技能都要求连接真机。按任务安装最小依赖即可：
+| Skill | 解决的问题 | 主要输出 |
+|---|---|---|
+| `collect-appgallery-reviews` | 按时间窗口采集 AppGallery 最新评论并检查虚拟列表缺口 | CSV、JSON、Markdown、采集检查点 |
+| `collect-appgallery-updates` | 整理正式版本、尝鲜和测试计划，保留官方来源边界 | 版本时间线、结构化版本记录 |
+| `collect-xiaohongshu-app-sentiment` | 还原帖子与评论语境，识别近期应用讨论主题 | 脱敏样本、主题与情感摘要 |
+| `app-review-tagging` | 把自然语言反馈转换成稳定、可审计的标签数据 | JSONL、CSV、标签统计 |
+| `app-satisfaction-analysis` | 计算趋势、主题、设备、地域和需求优先级 | 指标表、图表、P0/P1/P2 建议 |
+| `app-satisfaction-report` | 把分析结果装配成面向决策的完整报告 | Markdown、DOCX/PDF 报告 |
+| `inventory-mobile-app-features` | 按用户路径盘点功能并比较 Android/HarmonyOS | 功能树、证据矩阵、差异与重测清单 |
+
+每个 Skill 的输入、内部步骤、输出、依赖、调用示例和停止条件，见 [Skill 工作流总览](docs/SKILL_WORKFLOWS.md)。
+
+## 可以直接看到的输出参考
+
+- [完整工作流程与方法论（Markdown）](examples/workflow-methodology/鸿蒙应用研究_工作流程与方法论.md)
+- [可下载工作流程与方法论（DOCX）](examples/workflow-methodology/鸿蒙应用研究_工作流程与方法论.docx)
+- [报告输出规范](plugins/harmonyos-mobile-app-research/skills/app-satisfaction-report/references/examples/report-method-standard.md)
+- [完整报告实例](plugins/harmonyos-mobile-app-research/skills/app-satisfaction-report/references/examples/kugou-harmony-satisfaction-gold-example.md)
+
+仓库中的公开样本均经过公开发布检查；使用自己的数据时，结果保存在自己的工作区。
+
+## 按任务安装最小依赖
+
+不是每个 Skill 都需要连接真机。
 
 | 能力 | 必需依赖 | 可选依赖 |
 |---|---|---|
 | 评论标签化、满意度分析、Markdown 报告 | 插件本身 | Python 3.11+ 用于批量处理 |
 | CSV 校验、合并、功能差异矩阵 | Python 3.11+ | 无第三方 Python 包 |
-| AppGallery 评论/版本真机采集 | Python 3.11+、HDC、已连接 HarmonyOS 设备 | Hypium，见下方安装命令 |
+| AppGallery 评论/版本真机采集 | Python 3.11+、HDC、已连接 HarmonyOS 设备 | Hypium |
 | Android 真机功能盘点 | Android Platform Tools / ADB、测试设备 | UI Tree 与截图工具 |
-| 小红书舆情采集 | 单独安装 Agent Reach；用户自己控制的已登录会话 | OpenCLI 后端 |
+| 小红书舆情采集 | 单独安装 Agent Reach、用户控制的已登录会话 | OpenCLI 后端 |
 | DOCX/PDF 报告 | Codex 文档运行环境 | `python-docx`、`matplotlib`、`pandas`、`openpyxl` |
 
-完整说明和验证命令见 [DEPENDENCIES.md](DEPENDENCIES.md)。
+完整命令和验证步骤见 [DEPENDENCIES.md](DEPENDENCIES.md)。HarmonyOS 真机任务开始前，先确认 `hdc list targets -v` 中存在状态为 `Connected` 的明确目标。
 
-## HarmonyOS 采集快速配置
+## 鸿蒙电脑、Codex、ChatGPT 与 Cursor
 
-1. 安装包含 HDC 的 HarmonyOS/OpenHarmony 开发工具，并把 `hdc` 加入 `PATH`。
-2. 安装 Python 依赖：
+如果你正在搜索“鸿蒙电脑能否安装 Codex”“鸿蒙 PC 如何调用 ChatGPT”“鸿蒙电脑虚拟机运行 Cursor”或“HarmonyOS PC 使用 AI Agent”，当前可行路径是：
 
-   ```powershell
-   py -3.11 -m pip install -r plugins/harmonyos-mobile-app-research/requirements-harmony.txt
-   ```
+`鸿蒙 PC → Windows 虚拟机 → Codex / ChatGPT / Cursor → 本仓库 Skill`
 
-3. 连接设备并确认状态：
+这里描述的是在鸿蒙 PC 的 Windows 虚拟机中使用，不代表 Codex、ChatGPT 或 Cursor 已提供鸿蒙原生桌面版本。
 
-   ```powershell
-   hdc list targets -v
-   ```
+## 从 0.1.0 迁移
 
-4. 只使用输出中状态为 `Connected` 的目标；在当前 PowerShell 会话设置目标：
+`0.2.0` 将插件 ID 从 `mobile-app-research` 改为 `harmonyos-mobile-app-research`。先安装新插件，再在 `/plugins` 中卸载或停用旧的 `mobile-app-research`。后续配置统一使用新名称。
 
-   ```powershell
-   $env:HDC_TARGET = '<Connected目标>'
-   ```
+## 验证与共建
 
-不要把设备地址、配对码或目标值写进脚本、日志、Issue 或提交记录。
-
-## 隐私边界
-
-- 公开仓库只包含合成示例；示例中的应用、用户、地区、设备和评论均为虚构。
-- 采集结果默认保存在使用者自己的工作区，不提交回本仓库。
-- 对外分享前移除用户名、账号 ID、设备序列号、无线调试地址、配对码、Cookie、令牌和精确位置。
-- 评论正文仍可能包含个人信息；匿名用户名不等于完成脱敏，必须再次检查正文和字段组合。
-- 小红书能力不会自动登录、读取 Cookie、发帖、评论、点赞或关注。
-
-详细规则见 [PRIVACY.md](PRIVACY.md)。
-
-## 包含的技能
-
-- `collect-appgallery-reviews`
-- `collect-appgallery-updates`
-- `collect-xiaohongshu-app-sentiment`
-- `app-review-tagging`
-- `app-satisfaction-analysis`
-- `app-satisfaction-report`
-- `inventory-mobile-app-features`
-
-每个 Skill 的输入、内部流程、输出、依赖、使用示例和验证边界见 [Skill 工作流总览](docs/SKILL_WORKFLOWS.md)。完整链路、单 Skill 使用和没有真机时的回退方式都在该文档中说明。
-
-## 验证
-
-在仓库根目录运行：
+在仓库根目录运行插件验证：
 
 ```powershell
 py -3.11 -m pip install PyYAML
+py -3.11 scripts/validate_repository.py
 py -3.11 C:\path\to\plugin-creator\scripts\validate_plugin.py plugins/harmonyos-mobile-app-research
 ```
 
-各技能还应使用 Codex 的 `skill-creator/scripts/quick_validate.py` 分别校验。发布前再运行一次隐私扫描，并确认 Git 历史中从未提交真实数据或凭据。
+想贡献真实使用反馈、新场景或文档改进，请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)，也可以直接提交 Issue 或在 Discussions 中描述你希望 Agent 帮你完成的鸿蒙工作。
+
+如果这个项目让你少查了一次命令、少整理了一张表，或者帮助你更可靠地完成了一次鸿蒙应用研究，欢迎点一个 **Star**。它会帮助更多做鸿蒙产品、开发和测试的人发现这套工作流。
 
 ## 许可
 
-当前仓库未附加开源许可证。除 GitHub 服务条款允许的浏览和派生操作外，不自动授予复制、修改或再分发权。仓库所有者可在确认许可范围后另行添加许可证。
+当前仓库尚未附加开源许可证。仓库所有者确认许可范围后会单独补充；在此之前，不自动授予复制、修改或再分发权。

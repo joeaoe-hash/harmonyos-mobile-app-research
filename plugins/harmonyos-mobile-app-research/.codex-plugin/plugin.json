@@ -1,7 +1,7 @@
 {
   "name": "harmonyos-mobile-app-research",
-  "version": "0.3.2",
-  "description": "Research HarmonyOS mobile apps through review and release evidence, satisfaction and social-sentiment analysis, decision-ready reports, and Android/HarmonyOS feature inventories.",
+  "version": "0.3.3",
+  "description": "Turn Codex and ChatGPT into a HarmonyOS product-research agent for AppGallery evidence, satisfaction analysis, reports, and Android/HarmonyOS feature inventories.",
   "author": {
     "name": "HarmonyOS Mobile App Research Contributors"
   },
@@ -11,8 +11,17 @@
     "harmonyos-mobile-app-research",
     "mobile-app-research",
     "harmonyos",
+    "harmonyos-next",
+    "codex",
+    "chatgpt",
+    "ai-agent",
+    "agent-skills",
+    "appgallery",
+    "hdc",
     "app-reviews",
     "satisfaction-analysis",
+    "sentiment-analysis",
+    "product-research",
     "feature-inventory"
   ],
   "skills": "./skills/",

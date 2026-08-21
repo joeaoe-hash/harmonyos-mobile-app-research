@@ -1,0 +1,42 @@
+name: 使用场景 / Use case
+description: 分享一个希望由鸿蒙应用解决方案助手完成的真实工作场景
+title: "[Use case] "
+labels:
+  - use-case
+body:
+  - type: markdown
+    attributes:
+      value: |
+        最有价值的场景通常来自一件具体的小事：过去要怎样完成，现在希望只对 Agent 说什么。
+  - type: textarea
+    id: before
+    attributes:
+      label: 过去怎样完成
+      description: 哪些步骤最耗时、最容易遗漏，或者需要反复查命令？
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: 你希望怎样告诉 Agent
+      placeholder: 写成一句自然语言任务即可。
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: 什么结果才算完成
+      description: 请写清楚需要的文件、字段、图表、证据或验证状态。
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 平台
+      options:
+        - HarmonyOS
+        - Android 与 HarmonyOS
+        - 鸿蒙 PC Windows 虚拟机
+        - 不依赖设备
+    validations:
+      required: true

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 使用讨论 / Discussions
+    url: https://github.com/joeaoe-hash/harmonyos-mobile-app-research/discussions
+    about: 在这里交流还没有形成明确需求的想法和工作场景
